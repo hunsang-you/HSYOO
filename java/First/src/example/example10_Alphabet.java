@@ -1,7 +1,5 @@
 package example;
 
-import java.util.Scanner;
-
 public class example10_Alphabet {
 
 	public static void main(String[] args) {
