@@ -34,6 +34,27 @@ public class Member {
 		// TODO Auto-generated method stub
 		return memberName + "회원님의 아이디는 " + memberId + "입니다.";
 	}
+
+	@Override
+	public int hashCode() {
+		// TODO Auto-generated method stub
+		return memberId;
+	}
+
+	@Override
+	public boolean equals(Object obj) {
+		//
+		if(obj instanceof Member) {
+			Member member = (Member)obj;
+			if(this.memberId == member.memberId)
+				return true;
+			else
+				return true;
+			}
+		return false;
+	}
+	
+	
 	
 	
 	
