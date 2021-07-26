@@ -2,6 +2,7 @@ package lesson002;
 
 import java.util.HashMap;
 import java.util.Iterator;
+import lesson002.Member;
 
 public class MemberHashMap {
 	private HashMap<Integer, Member> hashMap;

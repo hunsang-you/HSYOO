@@ -2,7 +2,7 @@ package lesson002;
 
 import java.util.ArrayList;
 
-public class MyQueue {
+class MyQueue {
 
 	private ArrayList<String> arrayQueue = new ArrayList<String>();
 	
@@ -17,3 +17,24 @@ public class MyQueue {
 	}
 	
 }
+
+public class QueueTest {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		
+		MyQueue queue = new MyQueue();
+		
+		queue.enQueue("A");
+		queue.enQueue("B");
+		queue.enQueue("C");
+		
+		System.out.println(queue.deQueue());
+		System.out.println(queue.deQueue());
+		System.out.println(queue.deQueue());
+		
+
+	}
+
+}
+

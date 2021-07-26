@@ -2,6 +2,7 @@ package lesson002;
 
 import java.util.ArrayList;
 
+
 public class MemberArrayList {
 	private ArrayList<Member> arrayList;
 	

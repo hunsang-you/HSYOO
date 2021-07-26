@@ -1,6 +1,6 @@
 package lesson002;
 
-
+import lesson002.Member;
 
 public class MemberHashMapTest {
 

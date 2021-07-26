@@ -2,6 +2,7 @@ package lesson002;
 
 import java.util.Iterator;
 import java.util.TreeMap;
+
 import lesson002.Member;
 
 public class MemberTreeMap {
@@ -14,7 +15,7 @@ public class MemberTreeMap {
 		
 	}
 	public void addMember(Member member) {
-		treeMap.put(member.getMemberId(), member, member);
+		treeMap.put(member.getMemberId(), member);
 	}
 	
 	public boolean removeMember(int memberId) {

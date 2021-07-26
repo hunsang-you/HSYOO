@@ -3,6 +3,7 @@ package lesson002;
 import java.util.TreeSet;
 import java.util.Iterator;
 
+import lesson002.Member;
 
 public class MemberTreeSet {
 	
