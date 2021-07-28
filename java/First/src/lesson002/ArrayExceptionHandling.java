@@ -1,5 +1,7 @@
 package lesson002;
 
+import java.sql.SQLException;
+
 public class ArrayExceptionHandling {
 
 	public static void main(String[] args) {
