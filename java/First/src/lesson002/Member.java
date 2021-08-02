@@ -1,63 +1,45 @@
 package lesson002;
 
+import java.util.ArrayList;
+
 public class Member {
-
-	private int memberId; 		//회원 아이디
-	private String memberName;	//회원 이름
+	private ArrayList<Member> arrayList;
 	
-	// 생성자 constructor
-	public Member(int memberId, String memberName) {
-		this.memberId = memberId;
-		this.memberName = memberName; // this -> 위의 클래스로부터 생선된 객체의 
-	}
-
-	//getters, setters
 	
-	public int getMemberId() {
-		return memberId;
+	public MemberArrayList() {
+		arrayList = new ArrayList<Member>();
+	
+		
 	}
-
-	public void setMemberId(int memberId) {
-		this.memberId = memberId;
+	public void addMember(Member member) {
+		arrayList.add(member);
+		
 	}
-
-	public String getMemberName() {
-		return memberName;
-	}
-
-	public void setMemberName(String memberName) {
-		this.memberName = memberName;
-	}
-
-	@Override
-	public String toString() {
-		// TODO Auto-generated method stub
-		return memberName + "회원님의 아이디는 " + memberId + "입니다.";
-	}
-
-	@Override
-	public int hashCode() {
-		// TODO Auto-generated method stub
-		return memberId;
-	}
-
-	@Override
-	public boolean equals(Object obj) {
-		//
-		if(obj instanceof Member) {
-			Member member = (Member)obj;
-			if(this.memberId == member.memberId)
-				return true;
-			else
-				return true;
+	
+	public boolean removeMember(int memberId) {
+		for(int i = 0; i < arrayList.size(); i++) {
+			Member member = arrayList.get(i);
+			int tempId = member.getMemberId();
+			if(tempId == memberId) {
+			 arrayList.remove(i);
+			 return true;
 			}
+		}
+		
+		
+		System.out.println(memberId + "가 존재하지 않습니다.");
 		return false;
+		
+	}
+	
+	public void showAllMember() {
+		for(Member member : arrayList) {
+			System.out.println(member);
+		}
+	
 	}
 	
 	
 	
 	
-	
-	
-	
-}// end of main
+}

@@ -1,9 +1,10 @@
-// 유헌상
-package lesson002; 
+package example;
+
+import lesson002.MemberArrayList;
 
 public class MemberArrayListTest {
 
-	public static void main(String[] args) { 
+	public static void main(String[] args) {
 
 		MemberArrayList memberArrayList = new MemberArrayList();
 		
@@ -16,15 +17,20 @@ public class MemberArrayListTest {
 		memberArrayList.addMember(memberSon);
 		memberArrayList.addMember(memberPark);
 		memberArrayList.addMember(memberHong);
-		// 멤버 추가 후 전체 멤버 확인
+	
 		memberArrayList.showAllMember();
 		
 		System.out.println("-----멤버 삭제-----");
-		// 멤버 하나 삭제
+	
 		memberArrayList.removeMember(memberPark.getMemberId());
 		
-		// 삭제 후 확인
+	
 		memberArrayList.showAllMember();
+	}
+
+}
+
+
 	}
 
 }
