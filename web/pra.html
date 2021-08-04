@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    .sen1{
+        font-size : 20px;
+        color : blue
+    }
+</style>
+<body style = "background-color: rgba(238, 223, 141, 0.281);">
+    <form>
+        <div style="border: 3px solid rgb(104, 175, 233); font-weight:bold ; text-align: center;">
+            회원가입안내
+        </div>
+
+
+
+        <label for="fID">USER ID:</label>
+        <input type="text" id="fID" name="fID" >
+        <input type="submit" value="중복검사">
+        <br>
+
+        
+
+        <label for="PW">PASSWORD:</label>
+        <input type="text" id="PW" name="PW"  >
+<br>
+        <label for="rePW">PASSWORD확인</label>
+        <input type="text" id="PW" name="PW">
+<br>
+
+        <label for="fname">성명:</label>
+        <input type="text" id="fname" name="fname" >
+        
+<br>
+        <label for="register">주민등록번호:</label>
+        <input type="text" prime="register" primnum="register" >
+        <td>( - 없이 13자리를 입력해주세요)</td>
+
+        <br>
+
+        <label for="email">이메일:</label>
+        <input type="text" id="email" name="email" >
+        <select id="domain" name="domain" size="1" >
+            <option value="naver">naver.com</option>
+            <option value="daum">daum.net</option>
+            <option value="google">google.com</option>
+            <option value="paran">paran.com</option>
+            <option value="direct">직접입력</option>
+            
+          </select>
+
+<br>
+
+
+
+<label for="jobs">직업</label>
+<select id="jobs" name="jobs" size="1" >
+  <option value="Student">학생</option>
+  <option value="soldier">군인</option>
+  <option value="worker">직장인</option>
+  <option value="absenceStudent">휴학생</option>
+  <option value="jobseeker">구직자</option>
+</select>
+<br>
+<br>
+
+<tr style="sen1";>관심있는 장르를 선택해주세요.(중복가능)</tr><br>
+<form action="/action_page.php">
+    <input type="checkbox" id="horror" name="horror" value="horror">
+    <label for="vehicle1"> 공포</label><br>
+    <input type="checkbox" id="action" name="action" value="action">
+    <label for="vehicle2"> 액션</label><br>
+    <input type="checkbox" id="melo" name="melo" value="melo">
+    <label for="vehicle3"> 멜로</label><br>
+    <input type="checkbox" id="thriller" name="thriller" value="thriller">
+    <label for="vehicle3"> 스릴러</label><br>
+    <input type="checkbox" id="hero" name="hero" value="hero">
+    <label for="vehicle3"> 영웅</label><br>
+    <input type="checkbox" id="documentary" name="documentary" value="documentary">
+    <label for="vehicle3"> 다큐멘터리</label><br>
+    <input type="checkbox" id="comedy" name="comedy" value="comedy">
+    <label for="vehicle3"> 코미디</label><br>
+    <input type="checkbox" id="SF" name="SF" value="SF">
+    <label for="vehicle3"> SF</label><br>
+    <input type="checkbox" id="sports" name="sports" value="sports">
+    <label for="vehicle3"> 스포츠</label><br>
+    <input type="checkbox" id="fantasy" name="fantasy" value="fantasy">
+    <label for="vehicle3"> 판타지</label><br>
+    <input type="checkbox" id="music" name="music" value="music">
+    <label for="vehicle3"> 음악</label><br>
+    <input type="checkbox" id="short" name="short" value="short">
+    <label for="vehicle3"> 단편</label><br>
+
+  </form> 
+  
+<br>
+
+            <input type="submit" value="회원가입">
+            <input type="submit" formenctype="multipart/form-data" value="취소">
+      </form>
+</body>
+</html>
