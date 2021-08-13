@@ -83,6 +83,7 @@ class MyApp(QWidget) : # 정의
               self.tbl.setItem(row, 3, QTableWidgetItem(o3value.string))     
             row += 1
         ax = self.fig.add_subplot(111)
+        ax.clear() # 그래프 영역 초기
         ax.plot(df1, df2)
         
         self.canvas.draw()
