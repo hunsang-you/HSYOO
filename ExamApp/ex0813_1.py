@@ -131,18 +131,31 @@ class MyApp(QWidget) : # 정의
               
             for pm10value in item.findAll("pm10value") :
               self.tbl.setItem(row, 1, QTableWidgetItem(pm10value.string))  
-              self.df2.append(int(pm10value.string))
+              if pm10value.string == '-':
+                  self.df2.append()
+              else :
+                  self.df2.append(int(pm10value.string))
+
             for pm25value in item.findAll("pm25value") : 
               self.tbl.setItem(row, 2, QTableWidgetItem(pm25value.string))
-              self.df3.append(int(pm25value.string))
+              if pm25value.string == '-' :
+                  self.df3.append(0)
+              else :
+                  self.df3.append(int(pm25value.string))
+              
+              
             for o3value in item.findAll("o3value") : 
               self.tbl.setItem(row, 3, QTableWidgetItem(o3value.string))     
-              self.df4.append(float(o3value.string))
+              if o3value.string == '-':
+                  self.df4.append(0.0)
+              else :
+                  self.df4.append(float(o3value.string))
             row += 1
             
         self.df1.reverse()
         self.df2.reverse()
         self.df3.reverse()
+        self.df4.reverse()
         
         self.graph1()
         
@@ -179,7 +192,7 @@ class MyApp(QWidget) : # 정의
         
         ax2 = self.fig.add_subplot(312)
         ax2.clear() # 그래프 영역 초기화(subplot 각각 필요)
-        ax2.plot(self.df1, self.df3, 'b^')
+        ax2.plot(self.df1, self.df3, 'b--')
         
         ax3 = self.fig.add_subplot(313)
         ax3.clear()

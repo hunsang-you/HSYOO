@@ -183,6 +183,7 @@ class MyApp(QWidget) : # 정의
        self.le3.setText(str(item[2]))
        self.le4.setText(str(item[3]))
        self.le5.setText(item[4])
+
    
     def btn4Handler(self):
        self.currec += 1
@@ -198,25 +199,51 @@ class MyApp(QWidget) : # 정의
     
        
     def btnFindHandler(self):
-        sql = "select * from 제품 where 제품명 = %s"
-        self.cursor.execute(sql, (self.leFind.text()))
+        findstr = self.leFind.text()
+        if len(findstr) > 0:
+            
+        
+            sql = "select * from 제품 where 제품명 = %s"
+            self.cursor.execute(sql, (findstr))
+        else :
+            sql = "select * from 제품"
+            self.cursor.execute(sql)
+            
+            
         self.result = self.cursor.fetchall()
         
-        total = len(self.result)
-        if total > 0 :
-            item = self.result[self.currec] # 첫번째 레코드 반환    
-            self.le1.setText(item[0])
-            self.le2.setText(item[1])
-            self.le3.setText(str(item[2]))
-            self.le4.setText(str(item[3]))
-            self.le5.setText(item[4])
-            
-        else :   # 조회실패시    
-            QMessageBox.about(self, '정보', '검색 결과가 없습니다.')
+        self.cnt = len(self.result)
+        self.tbl.setRowCount(self.cnt)
+        
+        self.currec = 0
+        
+        self.leDisp()
+        
+        row = 0
+        for item in self.result :
+            for col in range(5) :
+                self.tbl.setItem(row, col, QTableWidgetItem(str(item[col])))
+            row += 1
+        else :
+            self.le1.setText('')
+            self.le2.setText('')
+            self.le3.setText('')
+            self.le4.setText('')
+            self.le5.setText('')
+        
+
     
     def tblCellHandler(self, row, col) :
         cellinfo = "%d : %d" & (row, col)
         QMessageBox(self, "정보", cellinfo)
+        
+    def leDisp(self) : # 레이블에 항목 풀력용 함수
+        item = self.result[self.currec] # 첫번째 레코드 반환    
+        self.le1.setText(item[0])
+        self.le2.setText(item[1])
+        self.le3.setText(str(item[2]))
+        self.le4.setText(str(item[3]))
+        self.le5.setText(item[4])
             
             
     def dbconn(self):
