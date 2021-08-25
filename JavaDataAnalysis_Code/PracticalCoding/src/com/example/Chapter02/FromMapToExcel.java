@@ -1,3 +1,8 @@
+/*  Data Analysis with Java
+ *  John R. Hubbard
+ *  March 30, 2017
+ */
+
 package com.example.Chapter02;
 
 import java.io.File;
@@ -8,7 +13,6 @@ import java.util.Map;
 import java.util.Scanner;
 import java.util.Set;
 import java.util.TreeMap;
-
 import org.apache.poi.hssf.usermodel.HSSFRow;
 import org.apache.poi.hssf.usermodel.HSSFSheet;
 import org.apache.poi.hssf.usermodel.HSSFWorkbook;
@@ -73,5 +77,6 @@ public class FromMapToExcel {
         } catch (IOException e) {
             System.err.println(e);
         }
-    } // end of main
-} // end of class
+    }
+}
+
