@@ -47,7 +47,8 @@ public class HierarchicalClustering {
         clusters.add(Cluster.union(cluster1, cluster2));
     }
 }
-
+)
+	}
 /*
 run:
 
